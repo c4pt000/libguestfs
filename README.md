@@ -1,5 +1,6 @@
 ```
 git clone https://github.com/c4pt000/libguestfs
+cd libguestfs
 git submodule update --init
 sudo dnf builddep libguestfs -y
 sudo dnf install autoconf automake libtool gettext-devel -y
