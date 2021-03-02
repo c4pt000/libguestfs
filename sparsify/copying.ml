@@ -253,7 +253,7 @@ You can ignore this warning or change it to a hard failure using the
             ) else if is_readonly_device "/" then (
               info (f_"Skipping %s, as it is a read-only device.") fs;
             ) else (
-              message (f_"Fill free space in %s with zero") fs;
+              message (f_"Fill free space in disk.img with zeros") fs;
               g#zero_free_space "/"
             )
           ) else (
@@ -268,7 +268,7 @@ You can ignore this warning or change it to a hard failure using the
               with _ -> false in
 
             if is_linux_x86_swap then (
-              message (f_"Clearing Linux swap on %s") fs;
+              message (f_"Clearing Linux swap on swap") fs;
 
               (* Don't use mkswap.  Just preserve the header containing
                * the label, UUID and swap format version (libguestfs
@@ -301,7 +301,7 @@ You can ignore this warning or change it to a hard failure using the
           with _ -> false in
 
         if created then (
-          message (f_"Fill free space in volgroup %s with zero") vg;
+          message (f_"Fill free space in volgroup image with zeros") vg;
 
           g#zero_device lvdev;
           g#sync ();
